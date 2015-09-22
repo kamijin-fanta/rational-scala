@@ -1,5 +1,8 @@
 package com.github.kamijin_fanta.math
 
+import scala.scalajs.js.annotation._
+
+@JSExportAll
 object Rational {
   def pow(n: Int, k: Int): Int = k match {
     case kk if kk < 0 => 0

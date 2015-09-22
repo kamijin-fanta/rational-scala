@@ -10,11 +10,19 @@ Scalaで分数
 
 ### build.sbt
 
-Compatible to 2.10 and 2.11 scala version
+Compatible to...
+
+- JVM Scala
+  - 2.10
+  - 2.11
+- Scala.js
+  - 0.6_2.10
+  - 0.6_2.11
 
 ```
 resolvers += "github kamijin-fanta maven repo" at "https://kamijin-fanta.github.io/repo/maven/"
-libraryDependencies += "com.github.kamijin_fanta" %% "rational-scala" % "1.0.0"
+libraryDependencies += "com.github.kamijin_fanta" %% "rational-scala" % "1.1.0"
+libraryDependencies += "com.github.kamijin_fanta" %%% "rational-scala" % "1.1.0"  // if you want scala.js
 ```
 
 ### Import
@@ -86,6 +94,13 @@ res1: com.github.kamijin_fanta.math.Rational = Rational(3/4)
 ```
 scala> Rational(15,20) == Rational(3,4)
 res2: Boolean = true
+```
+
+Auto reduction after calculate 
+
+```
+scala> Rational(2,4) + Rational(2,4)
+res3: com.github.kamijin_fanta.math.Rational = Rational(1/1)
 ```
 
 ### Type Conversion 

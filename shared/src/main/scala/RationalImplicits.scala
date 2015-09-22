@@ -5,19 +5,19 @@ import scala.math.Fractional
 object RationalImplicits {
   val rationalFractional = new Fractional[Rational] {
     override def div(x: Rational, y: Rational): Rational =
-      Rational(x.numerator * y.denominator, x.denominator * y.numerator)
+      Rational(x.numerator * y.denominator, x.denominator * y.numerator).reduction
 
     override def plus(x: Rational, y: Rational): Rational =
-      Rational(x.numerator * y.denominator + x.denominator * y.numerator, x.denominator * y.denominator)
+      Rational(x.numerator * y.denominator + x.denominator * y.numerator, x.denominator * y.denominator).reduction
 
     override def negate(x: Rational): Rational =
-      Rational(-x.numerator, x.denominator)
+      Rational(-x.numerator, x.denominator).reduction
 
     override def times(x: Rational, y: Rational): Rational =
-      Rational(x.numerator * y.numerator, x.denominator * y.denominator)
+      Rational(x.numerator * y.numerator, x.denominator * y.denominator).reduction
 
     override def minus(x: Rational, y: Rational): Rational =
-      Rational(x.numerator * y.denominator - x.denominator * y.numerator, x.denominator * y.denominator)
+      Rational(x.numerator * y.denominator - x.denominator * y.numerator, x.denominator * y.denominator).reduction
 
     override def compare(x: Rational, y: Rational): Int =
       (x.numerator * y.denominator) compare (x.denominator * y.numerator)
