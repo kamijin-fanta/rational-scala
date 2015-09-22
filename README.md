@@ -8,6 +8,15 @@ Scalaで分数
 
 ## Document
 
+### build.sbt
+
+Compatible to 2.10 and 2.11 scala version
+
+```
+resolvers += "github kamijin-fanta maven repo" at "https://kamijin-fanta.github.io/repo/maven/"
+libraryDependencies += "com.github.kamijin_fanta" %% "rational-scala" % "1.0.0"
+```
+
 ### Import
 
 ```
